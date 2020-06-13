@@ -2,13 +2,13 @@ import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyApiVQTAL9Qr0xBWkYsjoESyVB--9LQwck",
-  authDomain: "shousetu-d117d.firebaseapp.com",
-  databaseURL: "https://shousetu-d117d.firebaseio.com",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.DATABASE_URL,
   projectId: "shousetu-d117d",
   storageBucket: "shousetu-d117d.appspot.com",
   messagingSenderId: "365948322096",
-  appId: "1:365948322096:web:eb04487a29ea100f5888f5",
+  appId: process.env.APP_ID,
   measurementId: "G-7GYCFZWL3B"
 };
 
