@@ -14,9 +14,11 @@ const NoteList = ({ noteList }) => {
 };
 
 export const NoteListProps = () => {
-  const { noteList } = useSelector(state => ({
-    noteList: state.domain.noteList,
-  }));
+  const { noteList } = useSelector(state => {
+    return {
+      noteList: state.domain.noteList,
+    }
+  });
 
   return {
     noteList,

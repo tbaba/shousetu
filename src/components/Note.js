@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeNoteValue } from '../reducers';
+import { changeNoteValue, asyncCreateNote } from '../reducers';
 
-const Note = ({ note, onChange }) => {
+const Note = ({ note, onChange, onSubmit }) => {
   return (
     <div className="note">
       <header>
@@ -17,6 +17,12 @@ const Note = ({ note, onChange }) => {
           value={note.body}
           onChange={onChange}
         />
+        <button
+          type="button"
+          onClick={onSubmit}
+        >
+          Submit
+        </button>
       </header>
     </div>
   );
@@ -35,6 +41,7 @@ export const NoteProps = () => {
 
   const dispatchProps = {
     onChange: (e) => dispatch(changeNoteValue(e.target.name, e.target.value)),
+    onSubmit: () => dispatch(asyncCreateNote()),
   };
 
   return {

@@ -3,7 +3,10 @@ import note, {
   initialNoteState,
   changeNoteValue,
 } from './note';
-import noteList, { initialNoteListState } from './noteList';
+import noteList, {
+  initialNoteListState,
+  insertNote,
+} from './noteList';
 
 export const initialDomainState = {
   note: initialNoteState,
@@ -17,4 +20,5 @@ export default combineReducers({
 
 export {
   changeNoteValue,
+  insertNote,
 };
