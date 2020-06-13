@@ -1,9 +1,11 @@
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import Grid from '@material-ui/core/Grid';
 import rootReducers from '../reducers';
 
 import Note from './Note';
+import NoteList from './NoteList';
 
 function App() {
   const store = createStore(
@@ -13,9 +15,14 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="App">
-        <Note />
-      </div>
+      <Grid container spacing={2}>
+        <Grid item xs={3}>
+          <NoteList />
+        </Grid>
+        <Grid item xs={9}>
+          <Note />
+        </Grid>
+      </Grid>
     </Provider>
   );
 }

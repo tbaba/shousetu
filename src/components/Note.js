@@ -24,7 +24,7 @@ const Note = ({ note, onChange }) => {
 
 export const NoteProps = () => {
   const { note } = useSelector(state => ({
-    note: state.domain.note
+    note: state.domain.note,
   }));
 
   const stateProps = {
