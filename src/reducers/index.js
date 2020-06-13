@@ -4,6 +4,10 @@ import domain, {
   changeNoteValue,
 } from './domain';
 
+export const initialState = {
+  domain: initialDomainState,
+};
+
 export default combineReducers({
   domain,
 });
